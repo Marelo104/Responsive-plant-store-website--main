@@ -39,22 +39,59 @@ window.addEventListener('scroll', scrollUp);
     });
  })
 
- let t = document.querySelectorAll('.FAQs-card-content')
+ let cardOpen  = document.querySelectorAll('.FAQs-card-content')
  let clickCard = document.querySelectorAll('.FAQs-card');
  clickCard.forEach((card) => { 
     const toggleCard  = card.querySelector('.FAQs-card-content')
-    toggleCard.classList.remove('height-container');
     card.addEventListener('click', () => {
-        // if(toggleCard.classList.contains('height-container')){
-        //     toggleCard.classList.remove('height-container')
-        // }
-        // t.forEach(t => {t.classList.remove('height-container') 
-        //     t.classList.remove('')
-        // })
-        toggleCard.classList.add('height-container');
-        card.classList.add('content-item');
+        let items = document.querySelector('.content-item');
+        if(items && items !== card){
+            items.classList.remove('content-item');
+            toggleCard.removeAttribute('style');
+            console.log(items.removeAttribute('style'))
+            console.log(items);
+            console.log(card);
+
+        }
+        if(card.classList.contains('content-item')){
+            card.classList.remove('content-item');
+            toggleCard.removeAttribute('style');
+        }else{
+            card.classList.add('content-item');   
+            toggleCard.style.height = toggleCard.scrollHeight + 'px'
+        }
     });
  });
+
+
+
+
+// clickCard.forEach((item) =>{
+//     const accordionHeader = item.querySelector('.FAQs-card-header')
+
+//     accordionHeader.addEventListener('click', () =>{
+//         const openItem = document.querySelector('.content-item')
+
+//         toggleItem(item)
+
+//         if(openItem && openItem!== item){
+//             toggleItem(openItem)
+//         }
+//     })
+// })
+
+// const toggleItem = (item) =>{
+//     const accordionContent = item.querySelector('.FAQs-card-content')
+
+//     if(item.classList.contains('content-item')){
+//         accordionContent.removeAttribute('style')
+//         item.classList.remove('content-item')
+//     }else{
+//         accordionContent.style.height = accordionContent.scrollHeight + 'px'
+//         item.classList.add('content-item')
+//     }
+
+// }
 
 
 

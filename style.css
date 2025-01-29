@@ -516,6 +516,10 @@ h1, h2, h3 {
   color: #fff;
 }
 
+.content-item .FAQs-icon{
+  transform: rotate(45deg);
+}
+
 .FAQs-card-title{
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
@@ -949,12 +953,4 @@ h1, h2, h3 {
     right: -3rem;
     row-gap: 4.5rem;
   }
-}
-
-.open-card{
-  background-color: var(--first-color);
-}
-
-.height-container{
-  height: 0px !important;
 }
